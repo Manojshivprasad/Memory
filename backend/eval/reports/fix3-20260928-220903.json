@@ -1,0 +1,2158 @@
+{
+  "meta": {
+    "tag": "fix3",
+    "model": "openrouter/openai/gpt-4.1-nano",
+    "agent": "off",
+    "when": "2026-09-28T22:09:03",
+    "seconds": 141.7
+  },
+  "summary": {
+    "capture_recall": 0.66,
+    "stale_facts_retired": 0.833,
+    "stale_history_kept": 0.167,
+    "noise_rejected": 1.0,
+    "probe_pass": 0.606,
+    "probe_recall": 0.667,
+    "probe_precision": 0.939,
+    "probe_recall_from_memories": 0.682,
+    "cross_project_pass": 0.667,
+    "bloated_scenarios": [],
+    "avg_memories_per_scenario": 4.3,
+    "avg_context_tokens": 52.6,
+    "by_domain": {
+      "personal": {
+        "capture": 0.833,
+        "probes": 0.667
+      },
+      "education": {
+        "capture": 0.667,
+        "probes": 0.667
+      },
+      "work": {
+        "capture": 0.5,
+        "probes": 0.0
+      },
+      "health": {
+        "capture": 0.8,
+        "probes": 0.667
+      },
+      "travel": {
+        "capture": 1.0,
+        "probes": 1.0
+      },
+      "finance": {
+        "capture": 0.25,
+        "probes": 0.333
+      },
+      "cooking": {
+        "capture": 0.333,
+        "probes": 1.0
+      },
+      "creative": {
+        "capture": 0.25,
+        "probes": 0.333
+      },
+      "career": {
+        "capture": 1.0,
+        "probes": 1.0
+      },
+      "noise": {
+        "capture": null,
+        "probes": 1.0
+      }
+    },
+    "llm": {
+      "calls": 81,
+      "prompt_tokens": 101791,
+      "completion_tokens": 5577,
+      "cost_usd": 0.0123,
+      "failures": 0
+    }
+  },
+  "results": [
+    {
+      "id": "personal-life",
+      "domain": "personal",
+      "seconds": 20.1,
+      "stored": [
+        {
+          "label": "lives in Bangalore",
+          "ok": true,
+          "matched": [
+            "User's relocation and new job at Swiggy: User moved to Bangalore last month, joined Swiggy as an SDET, and now has a beagle named Bruno."
+          ]
+        },
+        {
+          "label": "works at Swiggy",
+          "ok": true,
+          "matched": [
+            "User's relocation and new job at Swiggy: User moved to Bangalore last month, joined Swiggy as an SDET, and now has a beagle named Bruno."
+          ]
+        },
+        {
+          "label": "sister Priya birthday March 3",
+          "ok": true,
+          "matched": [
+            "Priya's birthday is on 2026-03-03.",
+            "Manoj seeks help for Priya's birthday planning: Manoj, a Chennai-based QA engineer, asked for assistance in planning his sister Priya's birthday on March 3rd, including gift ideas, as he tends to forget to plan ahead."
+          ]
+        },
+        {
+          "label": "dog Bruno",
+          "ok": true,
+          "matched": [
+            "The user has a dog named Bruno.",
+            "User's relocation and new job at Swiggy: User moved to Bangalore last month, joined Swiggy as an SDET, and now has a beagle named Bruno."
+          ]
+        },
+        {
+          "label": "name Manoj",
+          "ok": true,
+          "matched": [
+            "Help Manoj plan Priya's birthday",
+            "Manoj seeks help for Priya's birthday planning: Manoj, a Chennai-based QA engineer, asked for assistance in planning his sister Priya's birthday on March 3rd, including gift ideas, as he tends to forget to plan ahead."
+          ]
+        }
+      ],
+      "superseded": [
+        {
+          "label": "lived in Chennai",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 1
+        },
+        {
+          "label": "worked at Infosys",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 0
+        }
+      ],
+      "absent": [
+        {
+          "label": "weather small talk",
+          "ok": true,
+          "found": []
+        }
+      ],
+      "probes": [
+        {
+          "query": "Where do I live these days?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 22.95,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "Remind me when my sister's birthday is",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 119,
+          "gate": "retrieve",
+          "latency_ms": 15.45,
+          "injected": [
+            "The user wants help with planning Priya's birthday.",
+            "The user's sister is Priya.",
+            "Help Manoj plan Priya's birthday",
+            "The user wants gift ideas for Priya's birthday.",
+            "The user often forgets to plan Priya's birthday."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Which company do I work for right now?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 14.12,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "What's my dog's name?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 22,
+          "gate": "retrieve",
+          "latency_ms": 13.52,
+          "injected": [
+            "The user has a dog named Bruno."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "gift ideas for Priya?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "pottery"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 146,
+          "gate": "retrieve",
+          "latency_ms": 14.02,
+          "injected": [
+            "Priya's birthday is on 2026-03-03.",
+            "The user wants gift ideas for Priya's birthday.",
+            "Help Manoj plan Priya's birthday",
+            "The user's sister is Priya.",
+            "The user wants help with planning Priya's birthday.",
+            "The user often forgets to plan Priya's birthday."
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 5,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "goal",
+          "content": "Help Manoj plan Priya's birthday",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "Priya's birthday is on 2026-03-03.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User's relocation and new job at Swiggy: User moved to Bangalore last month, joined Swiggy as an SDET, and now has a beagle named Bruno.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Manoj seeks help for Priya's birthday planning: Manoj, a Chennai-based QA engineer, asked for assistance in planning his sister Priya's birthday on March 3rd, including gift ideas, as he tends to forget to plan ahead.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "entity_relation",
+          "content": "The user wants gift ideas for Priya's birthday.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Develop an AI assistant to help Manoj plan Priya's birthday on March 3, 2026. The assistant should suggest gift ideas, considering Manoj's forgetfulness and recent relocation to Bangalore, where he works at Swiggy as an SDET. The goal is to streamline birthday preparations and ensure timely planning.",
+      "project_id": "8ee441a7-fd29-4184-bbe4-c7f2a65f98b6"
+    },
+    {
+      "id": "edu-spanish",
+      "domain": "education",
+      "seconds": 17.3,
+      "stored": [
+        {
+          "label": "DELE B1 exam Nov 20",
+          "ok": true,
+          "matched": [
+            "The user's goal is to reach B1 level for the DELE exam on 2026-11-20.",
+            "User's Spanish Practice Progress and Focus: User scored 78% on a practice test, improved subjunctive, now focusing on por vs para, aiming for B1 level for DELE by 2026-11-20.",
+            "User's Spanish learning plan for B1 exam: User is learning Spanish at A2 level with a DELE B1 exam scheduled for November 20; planning to develop a study plan."
+          ]
+        },
+        {
+          "label": "visual learning style",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "30 min daily",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "weak at por vs para",
+          "ok": true,
+          "matched": [
+            "Focus on por vs para next.",
+            "The user's weak spot is por vs para.",
+            "User's Spanish Practice Progress and Focus: User scored 78% on a practice test, improved subjunctive, now focusing on por vs para, aiming for B1 level for DELE by 2026-11-20."
+          ]
+        }
+      ],
+      "superseded": [],
+      "absent": [],
+      "probes": [
+        {
+          "query": "What should I practice in today's session?",
+          "note": "current weakness, not the old one",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 291,
+          "gate": "retrieve",
+          "latency_ms": 35.7,
+          "injected": [
+            "Focus on por vs para next.",
+            "The user scored 78% on the recent practice test.",
+            "User's Spanish Practice Progress and Focus: User scored 78% on a practice test, improved subjunctive, now focusing on por vs para, aiming for B1 level for DELE by 2026-11-20.",
+            "The user wants to focus on exam-specific skills and effective learning strategies.",
+            "The user often forgets to plan Priya's birthday.",
+            "The user has a dog named Bruno.",
+            "The user's goal is to reach B1 level for the DELE exam on 2026-11-20.",
+            "User's Spanish learning plan for B1 exam: User is learning Spanish at A2 level with a DELE B1 exam scheduled for November 20; planning to develop a study plan.",
+            "The user's weak spot is por vs para."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "When is my exam again?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 64,
+          "gate": "retrieve",
+          "latency_ms": 20.19,
+          "injected": [
+            "The user's goal is to reach B1 level for the DELE exam on 2026-11-20.",
+            "The user wants to focus on exam-specific skills and effective learning strategies."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "How should you explain grammar to me?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "visual",
+              "chart",
+              "table",
+              "color"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 13.54,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 8,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Focus on por vs para next.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user is currently at A2 level in Spanish.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's weak spot is por vs para.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's goal is to reach B1 level for the DELE exam on 2026-11-20.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user scored 78% on the recent practice test.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user wants to focus on exam-specific skills and effective learning strategies.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User's Spanish Practice Progress and Focus: User scored 78% on a practice test, improved subjunctive, now focusing on por vs para, aiming for B1 level for DELE by 2026-11-20.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User's Spanish learning plan for B1 exam: User is learning Spanish at A2 level with a DELE B1 exam scheduled for November 20; planning to develop a study plan.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Assist the user in mastering por vs para, their current weak spot, to reach B1 level for the DELE exam on 2026-11-20. Focus on exam-specific skills and effective learning strategies, building on their A2 proficiency and recent 78% practice test score. Develop a targeted study plan to improve understanding and application of key concepts.",
+      "project_id": "d7bf9fe4-e8c9-4061-a9c3-ae14d92466ca"
+    },
+    {
+      "id": "edu-tutor",
+      "domain": "education",
+      "seconds": 14.1,
+      "stored": [
+        {
+          "label": "Aarav grade 10",
+          "ok": true,
+          "matched": [
+            "Planning Aarav's Grade 10 CBSE Exam Prep: Discussed planning backward from March exam, with focus on short problem sets of 3 for Aarav, who gets distracted easily."
+          ]
+        },
+        {
+          "label": "strong in derivatives",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "short problem sets",
+          "ok": true,
+          "matched": [
+            "The user prefers short problems, max 3 per set.",
+            "Use short problem sets of 3 for Aarav",
+            "Planning Aarav's Grade 10 CBSE Exam Prep: Discussed planning backward from March exam, with focus on short problem sets of 3 for Aarav, who gets distracted easily."
+          ]
+        },
+        {
+          "label": "board exam March",
+          "ok": true,
+          "matched": [
+            "Plan study schedule backwards from March exam",
+            "Planning Aarav's Grade 10 CBSE Exam Prep: Discussed planning backward from March exam, with focus on short problem sets of 3 for Aarav, who gets distracted easily."
+          ]
+        },
+        {
+          "label": "now struggling with definite integrals",
+          "ok": true,
+          "matched": [
+            "Progress on Integration Techniques: User's student excelled in integration by parts, now focusing on definite integrals."
+          ]
+        }
+      ],
+      "superseded": [],
+      "absent": [],
+      "probes": [
+        {
+          "query": "Make today's worksheet for Aarav",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 253,
+          "gate": "retrieve",
+          "latency_ms": 27.33,
+          "injected": [
+            "Planning Aarav's Grade 10 CBSE Exam Prep: Discussed planning backward from March exam, with focus on short problem sets of 3 for Aarav, who gets distracted easily.",
+            "Use short problem sets of 3 for Aarav",
+            "Plan study schedule backwards from March exam",
+            "The user wants help with planning Priya's birthday.",
+            "Progress on Integration Techniques: User's student excelled in integration by parts, now focusing on definite integrals.",
+            "The user has a dog named Bruno.",
+            "The user prefers short problems, max 3 per set.",
+            "The user's sister is Priya.",
+            "The user often forgets to plan Priya's birthday."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "How many problems should I give him per set?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 75,
+          "gate": "retrieve",
+          "latency_ms": 14.77,
+          "injected": [
+            "The user prefers short problems, max 3 per set.",
+            "Use short problem sets of 3 for Aarav",
+            "The user wants help with planning Priya's birthday."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Who is Aarav's teacher?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "rao"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 24,
+          "gate": "retrieve",
+          "latency_ms": 14.67,
+          "injected": [
+            "Use short problem sets of 3 for Aarav"
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 5,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Plan study schedule backwards from March exam",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user prefers short problems, max 3 per set.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Progress on Integration Techniques: User's student excelled in integration by parts, now focusing on definite integrals.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "Use short problem sets of 3 for Aarav",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Planning Aarav's Grade 10 CBSE Exam Prep: Discussed planning backward from March exam, with focus on short problem sets of 3 for Aarav, who gets distracted easily.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Aarav math tutoring aims to prepare for the March CBSE Grade 10 exam by planning study sessions backward from the exam date. The focus is on short problem sets of three to accommodate Aarav's tendency to get distracted. The current progress includes mastery of integration by parts, now shifting to definite integrals. The AI assistant will generate concise, targeted problems to enhance Aarav's understanding and retention.",
+      "project_id": "2cd0aa9b-6bee-45e9-b01f-9a1f640ff8cf"
+    },
+    {
+      "id": "work-software",
+      "domain": "work",
+      "seconds": 13.0,
+      "stored": [
+        {
+          "label": "uses FastAPI",
+          "ok": true,
+          "matched": [
+            "The project uses fastapi (framework).",
+            "Building shop backend with FastAPI and Postgres: Discussed building a shop backend using FastAPI and Postgres, with a deadline of October 15, and planned milestones."
+          ]
+        },
+        {
+          "label": "uses MySQL",
+          "ok": true,
+          "matched": [
+            "Switched database from Postgres to MySQL",
+            "The project uses mysql (database).",
+            "Switched from Postgres to MySQL: The user switched the database from Postgres to MySQL due to hosting provider constraints."
+          ]
+        },
+        {
+          "label": "deadline Oct 15",
+          "ok": true,
+          "matched": [
+            "Building shop backend with FastAPI and Postgres: Discussed building a shop backend using FastAPI and Postgres, with a deadline of October 15, and planned milestones."
+          ]
+        },
+        {
+          "label": "Alice payments",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "Celery adopted",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "open question Stripe vs Razorpay",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [
+        {
+          "label": "used Postgres",
+          "ok": false,
+          "still_active": [
+            "Switched database from Postgres to MySQL"
+          ],
+          "history_kept": true,
+          "in_episodes": 2
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "Which database are we on?",
+          "note": "",
+          "ok": false,
+          "recall_ok": true,
+          "precision_ok": false,
+          "missing": [],
+          "leaked": [
+            [
+              "postgres"
+            ]
+          ],
+          "from_memories_only": true,
+          "tokens": 41,
+          "gate": "retrieve",
+          "latency_ms": 22.97,
+          "injected": [
+            "Switched database from Postgres to MySQL",
+            "The project uses mysql (database)."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Who should I ask about a payment bug?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "alice"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 48,
+          "gate": "retrieve",
+          "latency_ms": 14.43,
+          "injected": [
+            "Building shop backend with FastAPI and Postgres: Discussed building a shop backend using FastAPI and Postgres, with a deadline of October 15, and planned milestones."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "What do we use for background tasks?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "celery"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 18,
+          "gate": "retrieve",
+          "latency_ms": 14.04,
+          "injected": [
+            "Establish milestones for the project"
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Any open decisions left?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "stripe",
+              "razorpay"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 12.13,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 6,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Switched database from Postgres to MySQL",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "goal",
+          "content": "Establish milestones for the project",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses mysql (database).",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses postgres (database).",
+          "scope": "project",
+          "belief": false,
+          "closed": true,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses fastapi (framework).",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Switched from Postgres to MySQL: The user switched the database from Postgres to MySQL due to hosting provider constraints.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Building shop backend with FastAPI and Postgres: Discussed building a shop backend using FastAPI and Postgres, with a deadline of October 15, and planned milestones.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Develop a shop backend using FastAPI and MySQL, replacing the initial plan of Postgres due to hosting constraints. Establish clear milestones for project progress. Focus on efficient database integration and API development to meet project deadlines.",
+      "project_id": "5faa88fe-93bd-429a-9ae5-71dacea8a831"
+    },
+    {
+      "id": "health-fitness",
+      "domain": "health",
+      "seconds": 14.0,
+      "stored": [
+        {
+          "label": "race Dec 8",
+          "ok": true,
+          "matched": [
+            "Half marathon training plan adjustments: User is training for a December 8 half marathon, running 25 km weekly, with a left knee injury avoiding downhill runs, and lactose intolerance affecting nutrition tips."
+          ]
+        },
+        {
+          "label": "left knee injury",
+          "ok": true,
+          "matched": [
+            "Avoid downhill runs due to knee injury",
+            "Half marathon training plan adjustments: User is training for a December 8 half marathon, running 25 km weekly, with a left knee injury avoiding downhill runs, and lactose intolerance affecting nutrition tips."
+          ]
+        },
+        {
+          "label": "lactose intolerant",
+          "ok": true,
+          "matched": [
+            "Use lactose-free nutrition tips",
+            "Half marathon training plan adjustments: User is training for a December 8 half marathon, running 25 km weekly, with a left knee injury avoiding downhill runs, and lactose intolerance affecting nutrition tips."
+          ]
+        },
+        {
+          "label": "35 km weekly",
+          "ok": true,
+          "matched": [
+            "User decided to increase weekly mileage to 35 km.",
+            "User increased weekly mileage to 35 km: User reported increasing weekly running mileage to 35 km."
+          ]
+        },
+        {
+          "label": "goal under 2 hours",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [
+        {
+          "label": "25 km weekly",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 1
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "Plan this week's long run",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 244,
+          "gate": "retrieve",
+          "latency_ms": 20.11,
+          "injected": [
+            "Half marathon training plan adjustments: User is training for a December 8 half marathon, running 25 km weekly, with a left knee injury avoiding downhill runs, and lactose intolerance affecting nutrition tips.",
+            "User decided to increase weekly mileage to 35 km.",
+            "The user often forgets to plan Priya's birthday.",
+            "Avoid downhill runs due to knee injury",
+            "User increased weekly mileage to 35 km: User reported increasing weekly running mileage to 35 km.",
+            "The user has a dog named Bruno.",
+            "Use lactose-free nutrition tips",
+            "The user's sister is Priya.",
+            "The user wants help with planning Priya's birthday."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Suggest a post-run recovery snack",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 17.14,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "How much am I running per week?",
+          "note": "",
+          "ok": false,
+          "recall_ok": true,
+          "precision_ok": false,
+          "missing": [],
+          "leaked": [
+            [
+              "25 km",
+              "25km"
+            ]
+          ],
+          "from_memories_only": true,
+          "tokens": 24,
+          "gate": "retrieve",
+          "latency_ms": 13.13,
+          "injected": [
+            "User decided to increase weekly mileage to 35 km."
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 5,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "User decided to increase weekly mileage to 35 km.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "Avoid downhill runs due to knee injury",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "Use lactose-free nutrition tips",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User increased weekly mileage to 35 km: User reported increasing weekly running mileage to 35 km.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Half marathon training plan adjustments: User is training for a December 8 half marathon, running 25 km weekly, with a left knee injury avoiding downhill runs, and lactose intolerance affecting nutrition tips.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Develop an AI assistant to support a user training for a December 8 half marathon. The user runs 25 km weekly, avoiding downhill runs due to a knee injury, and follows lactose-free nutrition tips. The assistant will help optimize training plans, monitor mileage, and suggest injury-friendly exercises, ensuring personalized guidance aligned with these preferences.",
+      "project_id": "486fa34d-26dd-435b-b1cd-dfcaef9a6a7c"
+    },
+    {
+      "id": "travel-japan",
+      "domain": "travel",
+      "seconds": 17.7,
+      "stored": [
+        {
+          "label": "dates Apr 5-15",
+          "ok": true,
+          "matched": [
+            "The user plans a trip to Japan from 2026-04-05 to 2026-04-15.",
+            "Japan trip planning with Meera: User planned a trip to Japan from April 5 to April 15 with wife Meera, budget of 3000 USD, and needs to book JR Pass by March 1. Assistant will remind about JR Pass deadline."
+          ]
+        },
+        {
+          "label": "budget 3000",
+          "ok": true,
+          "matched": [
+            "The user has a budget of 3000 USD for the trip.",
+            "Japan trip planning with Meera: User planned a trip to Japan from April 5 to April 15 with wife Meera, budget of 3000 USD, and needs to book JR Pass by March 1. Assistant will remind about JR Pass deadline."
+          ]
+        },
+        {
+          "label": "Kyoto temples",
+          "ok": true,
+          "matched": [
+            "The user wants to see temples in Kyoto and prefers train travel to avoid long bus rides."
+          ]
+        },
+        {
+          "label": "JR pass by Mar 1",
+          "ok": true,
+          "matched": [
+            "The user needs to book the JR Pass by 2026-03-01.",
+            "Japan trip planning with Meera: User planned a trip to Japan from April 5 to April 15 with wife Meera, budget of 3000 USD, and needs to book JR Pass by March 1. Assistant will remind about JR Pass deadline."
+          ]
+        },
+        {
+          "label": "hotel Shinjuku",
+          "ok": true,
+          "matched": [
+            "Book vegetarian-friendly restaurants in Shinjuku",
+            "Hotel booked in Shinjuku for Tokyo: User booked a hotel in Shinjuku for Tokyo trip; discussed vegetarian restaurant preferences for Meera."
+          ]
+        },
+        {
+          "label": "Meera vegetarian",
+          "ok": true,
+          "matched": [
+            "Hotel booked in Shinjuku for Tokyo: User booked a hotel in Shinjuku for Tokyo trip; discussed vegetarian restaurant preferences for Meera."
+          ]
+        }
+      ],
+      "superseded": [],
+      "absent": [],
+      "probes": [
+        {
+          "query": "Suggest dinner spots for us in Tokyo",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 57,
+          "gate": "retrieve",
+          "latency_ms": 18.26,
+          "injected": [
+            "Book vegetarian-friendly restaurants in Shinjuku",
+            "What specific activities or sites does the user want to include in the trip?"
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "What do I still need to book?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 87,
+          "gate": "retrieve",
+          "latency_ms": 13.69,
+          "injected": [
+            "The user needs to book the JR Pass by 2026-03-01.",
+            "What specific activities or sites does the user want to include in the trip?",
+            "Book vegetarian-friendly restaurants in Shinjuku"
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "How should we get from Tokyo to Kyoto?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 68,
+          "gate": "retrieve",
+          "latency_ms": 15.96,
+          "injected": [
+            "The user wants to see temples in Kyoto and prefers train travel to avoid long bus rides.",
+            "The user plans a trip to Japan from 2026-04-05 to 2026-04-15."
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 8,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Book vegetarian-friendly restaurants in Shinjuku",
+          "scope": "project",
+          "belief": true,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "open_question",
+          "content": "What specific activities or sites does the user want to include in the trip?",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a budget of 3000 USD for the trip.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user needs to book the JR Pass by 2026-03-01.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user plans a trip to Japan from 2026-04-05 to 2026-04-15.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user wants to see temples in Kyoto and prefers train travel to avoid long bus rides.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Hotel booked in Shinjuku for Tokyo: User booked a hotel in Shinjuku for Tokyo trip; discussed vegetarian restaurant preferences for Meera.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Japan trip planning with Meera: User planned a trip to Japan from April 5 to April 15 with wife Meera, budget of 3000 USD, and needs to book JR Pass by March 1. Assistant will remind about JR Pass deadline.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Assist in planning a Japan trip from April 5-15, 2026, with a $3000 budget. Focus on temple visits in Kyoto, train travel, and vegetarian-friendly dining in Shinjuku. Remind to book the JR Pass by March 1, 2026. Clarify specific activities or sites the user wants to include.",
+      "project_id": "5db7a679-3885-4bf6-a649-c8ced79bb6ae"
+    },
+    {
+      "id": "finance",
+      "domain": "finance",
+      "seconds": 9.8,
+      "stored": [
+        {
+          "label": "budget 60k",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "car goal 8 lakh",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "SIP 20k",
+          "ok": true,
+          "matched": [
+            "User increased SIP to 20,000/month: User increased their SIP to 20,000 per month starting this month.",
+            "User increased SIP to 20,000/month"
+          ]
+        },
+        {
+          "label": "no crypto",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [
+        {
+          "label": "SIP 15k",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 0
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "How much do I put into my SIP each month?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 38,
+          "gate": "retrieve",
+          "latency_ms": 24.56,
+          "injected": [
+            "User increased SIP to 20,000/month: User increased their SIP to 20,000 per month starting this month."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Should I buy some bitcoin?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "crypto"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 14.11,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "Am I on track for my savings goal?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "car"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 15.36,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 2,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User increased SIP to 20,000/month: User increased their SIP to 20,000 per month starting this month.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "User increased SIP to 20,000/month",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Goal: Assist users with personal finance management, including SIP adjustments. Stack/decisions: Use AI to track and suggest SIP strategies; incorporate user updates like increased SIP to 20,000/month. State: User has increased SIP to 20,000/month as of September 28, 2026. Open: Monitor further financial changes and provide tailored advice. Preferences: Prioritize user-specific financial goals and real-time updates.",
+      "project_id": "a11bb9f6-3218-4cbd-988c-c478c25b666a"
+    },
+    {
+      "id": "cooking-allergy",
+      "domain": "cooking",
+      "seconds": 7.1,
+      "stored": [
+        {
+          "label": "peanut allergy",
+          "ok": true,
+          "matched": [
+            "Avoid suggesting peanuts in all future recommendations.",
+            "Peanut allergy noted: User informed assistant of severe peanut allergy; assistant acknowledged and committed to avoiding peanuts in suggestions."
+          ]
+        },
+        {
+          "label": "likes spicy",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "has air fryer",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [],
+      "absent": [
+        {
+          "label": "cat knocked glass",
+          "ok": true,
+          "found": []
+        }
+      ],
+      "probes": [
+        {
+          "query": "Give me a quick snack idea",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 23.21,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "What can I make for dinner tonight?",
+          "note": "safety-critical memory should surface broadly",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 13.42,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 2,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Avoid suggesting peanuts in all future recommendations.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Peanut allergy noted: User informed assistant of severe peanut allergy; assistant acknowledged and committed to avoiding peanuts in suggestions.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Goal: Develop an AI assistant for meal planning that respects user dietary restrictions. Stack/decisions: Avoid suggesting peanuts in all future recommendations, acknowledging the user's severe peanut allergy. State: The assistant will prioritize allergy safety in meal suggestions. Open: No. Preferences: Ensure allergy considerations are integrated into meal planning.",
+      "project_id": "2a5c1efa-3f06-43a8-a743-428e80fc78c5"
+    },
+    {
+      "id": "creative-novel",
+      "domain": "creative",
+      "seconds": 9.4,
+      "stored": [
+        {
+          "label": "Cornwall 1920s",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "protagonist Mara",
+          "ok": true,
+          "matched": [
+            "Rename protagonist to Mara",
+            "Renamed protagonist to Mara: User renamed the protagonist from Elena to Mara, and the assistant acknowledged the change."
+          ]
+        },
+        {
+          "label": "antagonist Voss",
+          "ok": false,
+          "matched": []
+        },
+        {
+          "label": "chapter 3 cliffhanger",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [
+        {
+          "label": "protagonist Elena",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 1
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "What's my main character's name again?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 17,
+          "gate": "retrieve",
+          "latency_ms": 22.9,
+          "injected": [
+            "Rename protagonist to Mara"
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Who is the villain?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "voss"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 12.89,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "Where and when is the story set?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "cornwall"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 14.83,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 2,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Rename protagonist to Mara",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Renamed protagonist to Mara: User renamed the protagonist from Elena to Mara, and the assistant acknowledged the change.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Goal: Develop an AI assistant to support the novel 'The Glass Tide'. Stack/decisions: Incorporate user-defined protagonist name 'Mara'. State: The protagonist is now Mara, as per user update. Open: No open issues. Preferences: Focus on assisting with story development and character consistency.",
+      "project_id": "a8dee2c4-af30-45a6-9306-cb171774ca82"
+    },
+    {
+      "id": "career-jobsearch",
+      "domain": "career",
+      "seconds": 9.9,
+      "stored": [
+        {
+          "label": "data scientist roles",
+          "ok": true,
+          "matched": [
+            "The user is applying for data scientist roles.",
+            "Preparing for Stripe Data Scientist Interview: User planned to send portfolio to recruiter Tom by Friday and was reminded by assistant. User has an interview with Stripe on Tuesday and is weak at system design questions."
+          ]
+        },
+        {
+          "label": "Stripe interview",
+          "ok": true,
+          "matched": [
+            "The user has an interview with Stripe on 2026-09-30 (Tuesday).",
+            "Preparing for Stripe Data Scientist Interview: User planned to send portfolio to recruiter Tom by Friday and was reminded by assistant. User has an interview with Stripe on Tuesday and is weak at system design questions."
+          ]
+        },
+        {
+          "label": "weak system design",
+          "ok": true,
+          "matched": [
+            "The user is weak at system design questions.",
+            "Preparing for Stripe Data Scientist Interview: User planned to send portfolio to recruiter Tom by Friday and was reminded by assistant. User has an interview with Stripe on Tuesday and is weak at system design questions."
+          ]
+        },
+        {
+          "label": "send portfolio to Tom",
+          "ok": true,
+          "matched": [
+            "Send portfolio to Tom by Friday",
+            "The user will send his portfolio to Tom by 2026-09-30 (Friday).",
+            "Preparing for Stripe Data Scientist Interview: User planned to send portfolio to recruiter Tom by Friday and was reminded by assistant. User has an interview with Stripe on Tuesday and is weak at system design questions."
+          ]
+        }
+      ],
+      "superseded": [],
+      "absent": [],
+      "probes": [
+        {
+          "query": "What should I prep before my interview?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 31,
+          "gate": "retrieve",
+          "latency_ms": 21.23,
+          "injected": [
+            "The user has an interview with Stripe on 2026-09-30 (Tuesday)."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "What do I owe Tom?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 69,
+          "gate": "retrieve",
+          "latency_ms": 13.93,
+          "injected": [
+            "The user will send his portfolio to Tom by 2026-09-30 (Friday).",
+            "The recruiter is Tom.",
+            "Send portfolio to Tom by Friday"
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 7,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Send portfolio to Tom by Friday",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has an interview with Stripe on 2026-09-30 (Tuesday).",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user is weak at system design questions.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user will send his portfolio to Tom by 2026-09-30 (Friday).",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user is applying for data scientist roles.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Preparing for Stripe Data Scientist Interview: User planned to send portfolio to recruiter Tom by Friday and was reminded by assistant. User has an interview with Stripe on Tuesday and is weak at system design questions.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The recruiter is Tom.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Assist the user in preparing for a data scientist interview with Stripe on 2026-09-30. Ensure the portfolio is sent to recruiter Tom by 2026-09-30. Focus on improving system design skills, as the user is weak in this area. Provide relevant resources and reminders to support the application process.",
+      "project_id": "f345d5d2-4393-4fff-b296-1c1885fee754"
+    },
+    {
+      "id": "noise-smalltalk",
+      "domain": "noise",
+      "seconds": 2.0,
+      "stored": [],
+      "superseded": [],
+      "absent": [
+        {
+          "label": "general knowledge",
+          "ok": true,
+          "found": []
+        }
+      ],
+      "probes": [
+        {
+          "query": "tell me a fun fact",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 11.99,
+          "injected": [],
+          "brief_used": false
+        }
+      ],
+      "memory_count": 0,
+      "max_memories": 2,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "",
+      "project_id": "9f71c434-d343-4d7a-9108-f93e2f7e62ec"
+    },
+    {
+      "id": "user-global-pref",
+      "domain": "personal",
+      "seconds": 6.9,
+      "stored": [
+        {
+          "label": "concise bullet preference",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [],
+      "absent": [],
+      "probes": [
+        {
+          "query": "draft a quick note to my landlord",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "bullet",
+              "short",
+              "concise"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 39.24,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 2,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "open_question",
+          "content": "What are Manoj's plans or needs?",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user has a dog named Bruno.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "preference",
+          "content": "The user wants help with planning Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user often forgets to plan Priya's birthday.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's sister is Priya.",
+          "scope": "user",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Introduction of Manoj: Manoj introduced himself to the assistant, who acknowledged the introduction.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Goal: Develop an AI writing assistant to support users like Manoj. Stack/decisions: Focus on natural language processing and user-friendly interface. State: Manoj has introduced himself, indicating initial user engagement. Open: Clarify Manoj's specific plans or needs. Preferences: Prioritize ease of use and adaptability to user requirements.",
+      "project_id": "635e968b-704a-46f5-90a8-990fa5b92628"
+    }
+  ],
+  "cross": [
+    {
+      "query": "Which database are we on?",
+      "note": "work facts must stay in their project",
+      "ok": true,
+      "missing": [],
+      "leaked": [],
+      "injected": []
+    },
+    {
+      "query": "What's my main character's name?",
+      "note": "novel facts must stay in their project",
+      "ok": true,
+      "missing": [],
+      "leaked": [],
+      "injected": []
+    },
+    {
+      "query": "How should you format answers for me?",
+      "note": "user-level preference should follow the user",
+      "ok": false,
+      "missing": [
+        [
+          "bullet",
+          "short",
+          "concise"
+        ]
+      ],
+      "leaked": [],
+      "injected": []
+    }
+  ]
+}

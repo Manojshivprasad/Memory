@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "tag": "dbg",
+    "model": "openrouter/openai/gpt-4.1-nano",
+    "agent": "off",
+    "when": "2026-09-28T22:09:41",
+    "seconds": 15.7
+  },
+  "summary": {
+    "capture_recall": 0.75,
+    "stale_facts_retired": 1.0,
+    "stale_history_kept": 0.0,
+    "noise_rejected": null,
+    "probe_pass": 0.667,
+    "probe_recall": 0.667,
+    "probe_precision": 1.0,
+    "probe_recall_from_memories": 0.5,
+    "cross_project_pass": null,
+    "bloated_scenarios": [],
+    "avg_memories_per_scenario": 9.0,
+    "avg_context_tokens": 53.0,
+    "by_domain": {
+      "finance": {
+        "capture": 0.75,
+        "probes": 0.667
+      }
+    },
+    "llm": {
+      "calls": 8,
+      "prompt_tokens": 9150,
+      "completion_tokens": 797,
+      "cost_usd": 0.0011,
+      "failures": 0
+    }
+  },
+  "results": [
+    {
+      "id": "finance",
+      "domain": "finance",
+      "seconds": 15.4,
+      "stored": [
+        {
+          "label": "budget 60k",
+          "ok": true,
+          "matched": [
+            "The user's monthly budget is 60,000 INR."
+          ]
+        },
+        {
+          "label": "car goal 8 lakh",
+          "ok": true,
+          "matched": [
+            "Savings plan for car purchase: Discussed user's monthly budget, savings goal of 8 lakh INR by December 2027 for a car, and planned to create a savings strategy."
+          ]
+        },
+        {
+          "label": "SIP 20k",
+          "ok": true,
+          "matched": [
+            "The user's SIP amount is now 20,000 INR per month.",
+            "User increased SIP to 20,000/month: User increased their SIP to 20,000 INR per month starting this month.",
+            "User increased SIP to 20,000 INR per month"
+          ]
+        },
+        {
+          "label": "no crypto",
+          "ok": false,
+          "matched": []
+        }
+      ],
+      "superseded": [
+        {
+          "label": "SIP 15k",
+          "ok": true,
+          "still_active": [],
+          "history_kept": false,
+          "in_episodes": 0
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "How much do I put into my SIP each month?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 80,
+          "gate": "retrieve",
+          "latency_ms": 23.2,
+          "injected": [
+            "User increased SIP to 20,000 INR per month",
+            "The user's SIP amount is now 20,000 INR per month.",
+            "The user's monthly budget is 60,000 INR."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Should I buy some bitcoin?",
+          "note": "",
+          "ok": false,
+          "recall_ok": false,
+          "precision_ok": true,
+          "missing": [
+            [
+              "crypto"
+            ]
+          ],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 16.62,
+          "injected": [],
+          "brief_used": true
+        },
+        {
+          "query": "Am I on track for my savings goal?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 79,
+          "gate": "retrieve",
+          "latency_ms": 13.23,
+          "injected": [
+            "Develop a detailed savings plan for the user.",
+            "The user's target savings amount is 8 lakh.",
+            "The target date for saving 8 lakh is December 2027."
+          ],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 9,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Develop a detailed savings plan for the user.",
+          "scope": "project",
+          "belief": true,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's SIP amount is now 20,000 INR per month.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's monthly budget is 60,000 INR.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user's target savings amount is 8 lakh.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The target date for saving 8 lakh is December 2027.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "fact",
+          "content": "The user is saving for a car.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "User increased SIP to 20,000/month: User increased their SIP to 20,000 INR per month starting this month.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "User increased SIP to 20,000 INR per month",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Savings plan for car purchase: Discussed user's monthly budget, savings goal of 8 lakh INR by December 2027 for a car, and planned to create a savings strategy.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Assist the user in achieving their savings goal of 8 lakh INR by December 2027 for a car. The user's monthly budget is 60,000 INR, with an SIP of 20,000 INR. Develop a tailored savings plan considering these parameters to meet the target within the timeframe.",
+      "project_id": "246078fa-f5c7-4f06-aab0-67579429e58d"
+    }
+  ],
+  "cross": []
+}

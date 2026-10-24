@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "memory-runtime"
+version = "0.1.0"
+description = "Real-time, project-scoped cognitive memory runtime that sits between users and LLMs."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29",
+    "pgvector>=0.3",
+    "alembic>=1.13",
+    "redis>=5.0",
+    "numpy>=1.26",
+    "fastembed>=0.4",
+    "litellm>=1.50",
+    "pyjwt>=2.9",
+    "argon2-cffi>=23.1",
+    "tiktoken>=0.7",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "orjson>=3.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "httpx>=0.27"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["integration: needs running postgres + redis (docker compose up)"]

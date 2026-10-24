@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "tag": "smoke",
+    "model": "openrouter/openai/gpt-4.1-nano",
+    "agent": "off",
+    "when": "2026-09-28T21:45:15",
+    "seconds": 27.1
+  },
+  "summary": {
+    "capture_recall": 1.0,
+    "stale_facts_retired": 0.0,
+    "stale_history_kept": 1.0,
+    "noise_rejected": null,
+    "probe_pass": 0.75,
+    "probe_recall": 1.0,
+    "probe_precision": 0.75,
+    "probe_recall_from_memories": 0.75,
+    "cross_project_pass": null,
+    "bloated_scenarios": [],
+    "avg_memories_per_scenario": 10.0,
+    "avg_context_tokens": 109.8,
+    "by_domain": {
+      "work": {
+        "capture": 1.0,
+        "probes": 0.75
+      }
+    },
+    "llm": {
+      "calls": 9,
+      "prompt_tokens": 5798,
+      "completion_tokens": 1212,
+      "cost_usd": 0.0011,
+      "failures": 0
+    }
+  },
+  "results": [
+    {
+      "id": "work-software",
+      "domain": "work",
+      "seconds": 26.8,
+      "stored": [
+        {
+          "label": "uses FastAPI",
+          "ok": true,
+          "matched": [
+            "Complete the shop backend using FastAPI and Postgres by October 15.",
+            "The project uses fastapi (framework).",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ]
+        },
+        {
+          "label": "uses MySQL",
+          "ok": true,
+          "matched": [
+            "Switched database from Postgres to MySQL.",
+            "The project now uses MySQL as the database.",
+            "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later."
+          ]
+        },
+        {
+          "label": "deadline Oct 15",
+          "ok": true,
+          "matched": [
+            "Set project deadline to October 15",
+            "Complete the shop backend using FastAPI and Postgres by October 15.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ]
+        },
+        {
+          "label": "Alice payments",
+          "ok": true,
+          "matched": [
+            "Alice owns the payments service.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ]
+        },
+        {
+          "label": "Celery adopted",
+          "ok": true,
+          "matched": [
+            "The project will use Celery with Redis as the broker for background jobs.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ]
+        },
+        {
+          "label": "open question Stripe vs Razorpay",
+          "ok": true,
+          "matched": [
+            "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later."
+          ]
+        }
+      ],
+      "superseded": [
+        {
+          "label": "used Postgres",
+          "ok": false,
+          "still_active": [
+            "Switched database from Postgres to MySQL.",
+            "Complete the shop backend using FastAPI and Postgres by October 15.",
+            "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ],
+          "history_kept": true
+        }
+      ],
+      "absent": [],
+      "probes": [
+        {
+          "query": "Which database are we on?",
+          "note": "",
+          "ok": false,
+          "recall_ok": true,
+          "precision_ok": false,
+          "missing": [],
+          "leaked": [
+            [
+              "postgres"
+            ]
+          ],
+          "from_memories_only": true,
+          "tokens": 188,
+          "gate": "retrieve",
+          "latency_ms": 18.81,
+          "injected": [
+            "Switched database from Postgres to MySQL.",
+            "The project now uses MySQL as the database.",
+            "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later.",
+            "Complete the shop backend using FastAPI and Postgres by October 15.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Who should I ask about a payment bug?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 164,
+          "gate": "retrieve",
+          "latency_ms": 17.95,
+          "injected": [
+            "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later.",
+            "Alice owns the payments service.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps.",
+            "Complete the shop backend using FastAPI and Postgres by October 15."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "What do we use for background tasks?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": true,
+          "tokens": 87,
+          "gate": "retrieve",
+          "latency_ms": 15.42,
+          "injected": [
+            "The project will use Celery with Redis as the broker for background jobs.",
+            "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps."
+          ],
+          "brief_used": true
+        },
+        {
+          "query": "Any open decisions left?",
+          "note": "",
+          "ok": true,
+          "recall_ok": true,
+          "precision_ok": true,
+          "missing": [],
+          "leaked": [],
+          "from_memories_only": false,
+          "tokens": 0,
+          "gate": "retrieve",
+          "latency_ms": 15.78,
+          "injected": [],
+          "brief_used": true
+        }
+      ],
+      "memory_count": 10,
+      "max_memories": 30,
+      "bloat": false,
+      "memories": [
+        {
+          "kind": "decision",
+          "content": "Switched database from Postgres to MySQL.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "Set project deadline to October 15",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "goal",
+          "content": "Complete the shop backend using FastAPI and Postgres by October 15.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project now uses MySQL as the database.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project now uses MySQL as the database.",
+          "scope": "project",
+          "belief": false,
+          "closed": true,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project will use Celery with Redis as the broker for background jobs.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses postgres (database).",
+          "scope": "project",
+          "belief": false,
+          "closed": true,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses postgres (database).",
+          "scope": "project",
+          "belief": false,
+          "closed": true,
+          "status": "active"
+        },
+        {
+          "kind": "decision",
+          "content": "The project uses fastapi (framework).",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "entity_relation",
+          "content": "Bob handles DevOps.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "entity_relation",
+          "content": "Alice owns the payments service.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Switched Database and Pending Payment Gateway Decision: The project switched from Postgres to MySQL due to hosting provider constraints. The team was undecided between Stripe and Razorpay for payment processing, with a plan to compare options later.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        },
+        {
+          "kind": "episode",
+          "content": "Shop backend development plan: Discussed building the shop backend with FastAPI and Postgres, set for October 15. Decided on using Celery with Redis for background jobs, with Alice managing payments and Bob handling DevOps.",
+          "scope": "project",
+          "belief": false,
+          "closed": false,
+          "status": "active"
+        }
+      ],
+      "brief": "Develop a shop backend using FastAPI and MySQL, with a deadline of October 15. Implement background jobs with Celery and Redis. Alice manages payments, Bob handles DevOps. The project involves switching from Postgres to MySQL due to hosting constraints, with a future decision pending on the payment gateway between Stripe and Razorpay.",
+      "project_id": "a7517a2b-bc51-4041-9b8a-a894746b44c1"
+    }
+  ],
+  "cross": []
+}
